@@ -32,7 +32,7 @@ import 'menu_header.dart';
 ///
 final class MenuItem<T> extends ContextMenuItem<T> {
   final String label;
-  final IconData? icon;
+  final Widget? icon;
   final BoxConstraints? constraints;
 
   const MenuItem({
@@ -80,14 +80,11 @@ final class MenuItem<T> extends ContextMenuItem<T> {
             style: textStyle,
             child: Row(
               children: [
-                SizedBox.square(
-                  dimension: 32.0,
-                  child: Icon(
-                    icon,
-                    size: 16.0,
-                    color: foregroundColor,
+                if (icon != null)
+                  SizedBox.square(
+                    dimension: 32.0,
+                    child: icon,
                   ),
-                ),
                 const SizedBox(width: 4.0),
                 Expanded(
                   child: Text(

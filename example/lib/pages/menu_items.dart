@@ -6,7 +6,7 @@ import '../entries/custom_context_menu_item.dart';
 const defaultContextMenuItems = <ContextMenuEntry>[
   MenuItem.submenu(
     label: "New",
-    icon: Icons.add_rounded,
+    icon: Icon(Icons.add_rounded),
     items: [
       MenuItem(
         label: "Node",
@@ -25,28 +25,28 @@ const defaultContextMenuItems = <ContextMenuEntry>[
   MenuItem(
     label: "Open...",
     value: "Open...",
-    icon: Icons.file_open_rounded,
+    icon: Icon(Icons.file_open_rounded),
   ),
   MenuItem.submenu(
     label: "View",
-    icon: Icons.view_comfy_alt_rounded,
+    icon: Icon(Icons.view_comfy_alt_rounded),
     items: [
       MenuHeader(text: "Visibility"),
       MenuItem(
         label: "Comapct",
         value: "Comapct",
-        icon: Icons.view_compact_rounded,
+        icon: Icon(Icons.view_compact_rounded),
       ),
       MenuItem(
         label: "Comfortable",
         value: "Comfortable",
-        icon: Icons.view_comfortable_rounded,
+        icon: Icon(Icons.view_comfortable_rounded),
       ),
       MenuDivider(),
       MenuItem(
         label: "Show Mini Map",
         value: "Show Mini Map",
-        icon: Icons.screen_search_desktop_rounded,
+        icon: Icon(Icons.screen_search_desktop_rounded),
       ),
     ],
   ),
