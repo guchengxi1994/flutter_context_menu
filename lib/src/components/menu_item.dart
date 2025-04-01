@@ -34,22 +34,24 @@ final class MenuItem<T> extends ContextMenuItem<T> {
   final String label;
   final Widget? icon;
   final BoxConstraints? constraints;
+  final TextStyle? menuTextStyle;
 
-  const MenuItem({
-    required this.label,
-    this.icon,
-    super.value,
-    super.onSelected,
-    this.constraints,
-  });
+  const MenuItem(
+      {required this.label,
+      this.icon,
+      super.value,
+      super.onSelected,
+      this.constraints,
+      this.menuTextStyle});
 
-  const MenuItem.submenu({
-    required this.label,
-    required List<ContextMenuEntry> items,
-    this.icon,
-    super.onSelected,
-    this.constraints,
-  }) : super.submenu(items: items);
+  const MenuItem.submenu(
+      {required this.label,
+      required List<ContextMenuEntry> items,
+      this.icon,
+      super.onSelected,
+      this.constraints,
+      this.menuTextStyle})
+      : super.submenu(items: items);
 
   @override
   Widget builder(BuildContext context, ContextMenuState menuState,
@@ -58,7 +60,7 @@ final class MenuItem<T> extends ContextMenuItem<T> {
 
     final background = context.colorScheme.surface;
     final normalTextColor = Color.alphaBlend(
-      context.colorScheme.onSurface.withOpacity(0.7),
+      context.colorScheme.onSurface.withValues(alpha: 0.7),
       background,
     );
     final focusedTextColor = context.colorScheme.onSurface;
@@ -90,6 +92,7 @@ final class MenuItem<T> extends ContextMenuItem<T> {
                   child: Text(
                     label,
                     maxLines: 1,
+                    style: menuTextStyle,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),

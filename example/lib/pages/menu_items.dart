@@ -9,9 +9,10 @@ const defaultContextMenuItems = <ContextMenuEntry>[
     icon: Icon(Icons.add_rounded),
     items: [
       MenuItem(
-        label: "Node",
-        value: "Node",
-      ),
+          menuTextStyle: TextStyle(color: Colors.red),
+          label: "Node",
+          value: "Node",
+          icon: Icon(Icons.read_more)),
       MenuItem(
         label: "Item",
         value: "Item",
